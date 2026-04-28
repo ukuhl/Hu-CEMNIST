@@ -1,0 +1,59 @@
+{
+    "questions": [
+        {
+            "id": 0,
+            "desc": "Please indicate your age.",
+            "options": ["18-24y", "25-34y", "35-44y", "45-54y", "55-65y", "65y and older", "prefer not to say"]
+        },
+        {
+            "id": 1,
+            "desc": "Please indicate your gender identity.",
+            "options": ["male", "female", "non-binary", "transgender", "other", "prefer not to say"]
+        },
+        {
+            "id": 2,
+            "desc": "The instructions were clear enough to understand how to make minimal changes while reaching at least 2% change.",
+            "options": ["Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree"]
+        },
+        {
+            "id": 3,
+            "desc": "It was difficult to use the brush, eraser, and undo annotations.",
+            "options": ["Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree"]
+        },
+        {
+            "id": 4,
+            "desc": "I am confident that my annotations capture the essential differences between two symbols.",
+            "options": ["Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree"]
+        },
+        {
+            "id": 5,
+            "desc": "Please select 'Strongly disagree' to confirm that you're paying attention.",
+            "options": ["Strongly disagree", "Disagree", "Neutral", "Agree", "Strongly agree"]
+        },
+        {
+            "id": 6,
+            "desc": "Did you follow a specific annotation strategy?",
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": 7,
+            "desc": "If you followed a specific annotation strategy: How did you decide which features to highlight or erase? (optional)",
+            "options": ["Open ended text box."]
+        },
+        {
+            "id": 8,
+            "desc": "Did the 2% minimal-change requirement affect your annotation strategy?",
+            "options": ["Yes", "No"]
+        },
+        {
+            "id": 9,
+            "desc": "If the 2% minimal-change requirement affected your annotation strategy, how did it do that? (optional)",
+            "options": ["Open ended text box."]
+        },
+        {
+            "id": 10,
+            "desc": "Is there anything else you'd like to share about your experience or about how we can improve the tool? (optional)",
+            "options": ["Open ended text box."]
+        }
+    ]
+}

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link type="text/css" rel="stylesheet" href="static/libs/bootstrap.min.css" />
+        <link type="text/css" rel="stylesheet" href="static/libs/bootstrap-vue.min.css" />
+    
+        <!--<script src="static/libs/bootstrap.bundle.min.js"></script>-->
+        <script src="static/libs/polyfill.min.js"></script>
+        <script src="static/libs/vue.min.js"></script>
+        <script src="static/libs/bootstrap-vue.min.js"></script>
+        <script src="static/libs/bootstrap-vue-icons.min.js"></script>
+    
+        <script src="js/controller.js"></script>
+        <script src="js/api.js"></script>
+        <script src="js/paint.js"></script>
+    
+        <link type="text/css" rel="stylesheet" href="static/styles.css" />
+        <title>
+            Hu-CEMNIST
+        </title>    
+    </head>
+    <body>
+        <div id="app" class="app">
+            <div id="welcomePage" style="display:inline;">
+                    <div class="container">
+                        <div class="row text-left mt-5"> 
+                            <div class="col-12">
+                                <h2>Welcome to the Hu-CEMNIST study!</h2>
+                                <p>Thank you for taking the time to participate in our research.
+                                <br>
+                                With this study, we want to understand how people visually explain what makes one digit different from another.
+                                Your participation is invaluable and will contribute to a better understanding of human decision-making.
+                                <br>
+                                This research project is conducted by Dr. Ulrike Kuhl at Bielefeld University. 
+                                The study was approved by the Ethics Committee of Bielefeld University, Germany.
+                                People of any gender, aged 18 and above, are invited to participate.</p>
+                    
+                                <b>What to Expect</b>
+                                <br>
+                                <p>The study will take <b>approximately 10 minutes</b> to complete.<br>
+                                You will be shown a symbol and asked to highlight specific areas that make this symbol look like a specified "target" symbol instead of the original one.<br>
+                                For example, you may be asked to highlight areas that make a "9" look more like a "0".<br>
+                                Afterwards, you will be asked to answer a short questionnaire assessing your experience with the system.</p>
+
+                                <b>Your Rights as a Participant</b>
+                                <br>
+                                <p>Your participation in this research study is voluntary.<br>
+                                You may choose not to participate. If you decide to participate, you may withdraw at any time without giving any reason.
+                                In this case, all data collected will be deleted.<br>
+                                Your responses will be treated confidentially.
+                                No identifying information such as your name, email address or IP address will be recorded.<br>
+                                After completion of the study, the research data collected will be made publicly available in anonymized form that does not allow any conclusions about individual or specific persons.
+                                The purpose, type, and scope of potential subsequent use are currently not foreseeable.</p>
+
+                                <b>Contact Information</b>
+                                <br>
+                                <p>If you have any questions or comments about the research study, please contact Dr. Ulrike Kuhl at <a href="mailto:ukuhl@techfak.uni-bielefeld.de">ukuhl@techfak.uni-bielefeld.de</a>.</p>
+
+                                <b>Consent</b>
+                                <br>
+                                <p>Please select your choice below or close this window to decline participation and withdraw from this study.</p>
+
+                                <b-form-checkbox
+                                    id="checkboxUserConsent"
+                                    v-model="checkboxUserConsent"
+                                    name="checkboxUserConsent"
+                                    value="accepted"
+                                    unchecked-value="not_accepted">
+                                    I hereby agree that I have read and understood the above participant information. I agree to participate voluntarily in the study under the conditions described above.
+                                </b-form-checkbox>
+
+                                <b-form-checkbox
+                                    id="checkboxAgeConsent"
+                                    v-model="checkboxAgeConsent"
+                                    name="checkboxAgeConsent"
+                                    value="accepted"
+                                    unchecked-value="not_accepted">
+                                    I am at least 18 years of age.
+                                </b-form-checkbox>
+
+                            </div>
+                        </div>
+                        <div class="row text-right"> 
+                            <div class="col-12">
+                                <b-button variant="primary" :disabled="checkboxUserConsent != 'accepted' || checkboxAgeConsent != 'accepted'" @click="onClickWelcomePageNext()">Continue</b-button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div id="briefingPage0" style="display:none;">
+                <div class="container">
+                    <div class="row text-left d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <h2>Instructions</h2>
+                            <p>In this study, you will be shown a series of symbols. You will be asked to highlight specific areas that make them look like a specified “target” symbol instead of the original one.</p>
+                            <p>To do so, you will be using an <b>annotation tool</b>.</p>
+                            <p>On the next page, a video tutorial will familiarize you with the task and procedure. Please pay <b>close attention</b> to the content of the video.</p>
+                            <p>After watching the video, you will have to answer <b>4 comprehension questions correctly</b> before starting the actual task. If you <b>fail twice</b> to answer these questions correctly, you will be asked to return the study and not be able to complete it!</p>
+                            <p>Please note: Please do not use your browser’s "Back" button at any point in this study. Doing so may disrupt the study’s functionality and prevent you from completing it.</p>
+                        </div>
+                    </div>
+
+                    <div class="row text-right"> 
+                        <div class="col-12">
+                            <b-button variant="primary" @click="onClickBriefing0NextPage()">Continue to video</b-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="briefingPage1" style="display:none;">
+                <div class="container">
+                    <div class="row text-left d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <h2>Instructions</h2>
+                            <p>The video below will familiarize you with the task and procedure.</p>
+                            <p>Please pay <b>close attention</b> to the content.</p>
+                            <p>After watching the video, you will have to answer <b>4 comprehension questions</b> correctly before starting the actual task.</p>
+                        </div>
+                    </div>
+
+                    <div class="row text-center d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <div class=”center”>
+                                <video id="video_tutorial" class="video-js vjs-default-skin" width="800"
+                                       src="static/Video_tutorial_210325_720p.mp4" type="video/mov" preload="true" autoplay> 
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row text-right"> 
+                        <div class="col-12">
+                            <b-button variant="primary" :disabled="!videoOver" @click="onClickBriefing1NextPage()">Continue</b-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="attentionPage" style="display:none;">
+                <div class="container">
+                    <div class="row text-left d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <h2>Please answer the following questions</h2>
+                        </div>
+                    </div>
+
+                    <div class="row text-left d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <h4>1. What is the main goal of the annotation tool?</h4>
+                            <b-form-group>
+                                <b-form-radio v-model="checkboxAttentionQ1"  value="A">To create a new font.</b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ1"  value="B">To make minimal changes to a symbol to transform it into another symbol.</b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ1"  value="C">To make as many changes as possible to a symbol to transform it into another symbol.</b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ1"  value="D">To identify parts of a symbol that make it look appealing.</b-form-radio>
+                            </b-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row text-left d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <h4>2. How much change should apply to each image?</h4>
+                            <b-form-group>
+                                <b-form-radio v-model="checkboxAttentionQ2"  value="A">Exactly 2%</b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ2"  value="B">At least 5%</b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ2"  value="C">At least 2%</b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ2"  value="D">At least 2px</b-form-radio>
+                            </b-form-group>
+                        </div>
+                    </div>
+    
+                    <div class="row text-left d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <h4>3. Which symbol denotes the "Brush" feature, allowing to add pixels?</h4>
+                            <b-form-group>
+                                <b-form-radio v-model="checkboxAttentionQ3"  value="A"><img src="static/brush.svg"></b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ3"  value="B"><img src="static/arrow-counterclockwise.svg"></b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ3"  value="C"><img src="static/eraser.svg"></b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ3"  value="D">The tool does not allow to add any changes.</b-form-radio>
+                            </b-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row text-left d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <h4>4. Which statement best describes the "Undo" feature?</h4>
+                            <b-form-group>
+                                <b-form-radio v-model="checkboxAttentionQ4"  value="A">It automatically makes all necessary changes.</b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ4"  value="B">It recalculates the exact percentage of change.</b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ4"  value="C">It saves all your annotations.</b-form-radio>
+                                <b-form-radio v-model="checkboxAttentionQ4"  value="D">It reverses your most recent action.</b-form-radio>
+                            </b-form-group>
+                        </div>
+                    </div>
+
+                    <div class="row text-right"> 
+                        <div class="col-12">
+                            <b-button variant="primary"
+                                :disabled='isAttentionCheckBtnDisabled'
+                                @click="onClickAtentionCheckNextPage()">Continue</b-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="trialPage" style="display:none;">
+                <div class="container">
+                    <div class="row text-left d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <h4>Current Task:</h4>
+
+                            <h3>If these changes were applied to the <b>{{curTrialData["label"]}}</b>, it would become a <b>{{curTrialData["target"]}}</b></h3>
+                            <p>Amount of change: {{imgChangePercentage}}%</p>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center mt-8">
+                        <div class="col-auto">
+                            <div class="row">
+                                <b-button id="btnBrush" :variant="btnBrushVariant" @click="onclickBtnBrush"><img src="static/brush.svg"></button>
+                            </div>
+                            <div class="row mt-1">
+                                <b-button id="btnEraser" :variant="btnEraserVariant" @click="onclickBtnEraser"><img src="static/eraser.svg"></button>
+                            </div>
+                            <div class="row mt-1">
+                                <b-button id="btnReset" variant="danger"><img src="static/arrow-counterclockwise.svg"></button>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <canvas id="canvas" class="my-cursor my-canvas"></canvas>
+                        </div>
+                    </div>
+    
+                    <div class="row text-right"> 
+                        <div class="col-12">
+                            <b-button id="btnTrialNext" variant="primary" @click="onClickTrialNextPage()">Continue</b-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="startQuestions" style="display:none;">
+                <div class="my-center">
+                <div class="container my-center-sub">
+                    <div class="row text-left d-flex align-items-center mt-5">
+                        <h4>This concludes the first part of the study. Next, we would like to ask you to answer some questions.</h4>
+                    </div>
+    
+                    <div class="row text-right"> 
+                        <div class="col-12">
+                            <b-button variant="primary" @click="onClickStartQuestionsNextPage">Continue</b-button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+    
+            <div id="questionnairePage" style="display:none;">
+                <div class="my-center">
+                <div class="container my-center-sub">
+                    <div class="row d-flex align-items-center mt-5">
+                        <div id="otherQuestions" style="display:inline;">
+                            <div class="row text-left"> 
+                                <div class="col-12">
+                                    <h4>Please answer each of the following questions as accurately and honestly as you can. Some questions require a simple "Yes" or "No", some invite a written response, and others ask for your level of agreement. There are no right or wrong answers - your honest feedback is appreciated!</h4>
+                                    <br>
+                                    <h5>Question {{curQuestionId + 1}}/{{questionnaireData.length}}</h5>
+                                    <br><br>
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center">
+                                <div class="col-12">
+                                    <div :style="{display: (curQuestion.options.length != 1) ? 'inline' : 'none'}">
+                                        <question 
+                                        class="mt-1 mb-1"
+                                        v-bind:key="curQuestion.id"
+                                        v-bind:q="curQuestion"
+                                        v-on:click-on-radio-button="(r) => onClickQuestionnaireRadioButton(curQuestion.id, r)">
+                                        </question>
+                                    </div>
+                                    <div :style="{display: (curQuestion.options.length == 1) ? 'inline' : 'none'}">
+                                        <h5>{{curQuestion.desc}}</h5>
+                                        <b-form-textarea v-model="questionFreeText" placeholder="Your answer"></b-form-textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row text-right"> 
+                        <div class="col-12">
+                            <b-button variant="primary"
+                            :disabled="questionnairePageNextButtonDisabled"
+                            @click="onClickQuestionairNextPage()">
+                                Next
+                            </b-button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+    
+            <div id="dataTransmissionPage" style="display:none;">
+                <div class="container">
+                    <div class="loader my-center"></div>
+                    <br>
+                    <p>Your study data us currently transferred to our server. Please be patient, you will be forwarded to the end of the study shortly.</p>
+                </div>
+            </div>
+
+            <div id="debriefingPage" style="display:none;" class="text-left">
+                <div class="container">
+                    <div class="row text-left d-flex align-items-center mt-5"> 
+                        <div class="col-12">
+                            <h2>Thank you for participating in the Hu-CEMNIST study!</h2>
+                            <p>Your participation is invaluable to our research, and we appreciate the time and effort you have contributed.</p>
+                            
+                            <b>Debriefing: Why This Research is Important</b>
+                            <br>
+                            <p>Our goal was to learn how people visually show the differences between two digits (for example, how “0” differs from “9”).
+                            By highlighting parts of the image that make it look more like one digit than another, we collected insights into how people intuitively distinguish between different digits.</p>
+                            
+                            <p>These insights will:</p>
+
+                            <ul>
+                                <li>Help researchers create and check computer programs that explain how they recognize digits.</li>
+                                <li>Serve as a guide to compare human-based explanations with computer-generated ones.</li>
+                                <li>Advance research on making computer algorithms clearer and more understandable.</li>
+                            </ul>
+
+                            <b>Use of Data</b>
+                            <p>Please rest assured that all data collected during this study will be kept in anonymized form that does not allow any conclusions about individual or specific persons. Your responses will not be linked to your identity.</p>
+                            <p>If you would like your data to be deleted from our study prior to publication, please contact the principal 
+                            investigator. Use the following unique code to request the deletion of your data:
+                            <br>
+                            <i>{{userId}}</i>
+                            <br>
+                            This code helps us identify and remove your data while ensuring your privacy. Please note 
+                            that <b>without this code, we cannot delete the data</b>.</p>
+                                
+                            <b>Contact Information</b>
+                            <br>
+                            <p>If you have any questions or concerns about this study, or if you would like to learn more about the research outcomes, please feel free to contact us at:
+                            <br>
+                            <b>Principal Investigator:</b> Dr. Ulrike Kuhl, <a href="mailto:ukuhl@techfak.uni-bielefeld.de">ukuhl@techfak.uni-bielefeld.de</a>, Bielefeld University, Germany</p>
+
+                            <b>Prolific Completion Confirmation</b>
+                            <br>
+                            <p>To confirm that you have completed the study and claim your reward, please click on this button:</p>
+                            <br>
+                            <b-button variant="primary" href="https://app.prolific.com/submissions/complete?cc=TODO">Confirm Participation</b-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

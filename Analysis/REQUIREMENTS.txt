@@ -1,0 +1,12 @@
+dice-ml
+matplotlib
+seaborn
+alibi
+pandas
+scikit-learn
+ce-library
+cel-nflows
+tensorflow-datasets
+scikit-image
+idx2numpy
+tensorflow-cpu

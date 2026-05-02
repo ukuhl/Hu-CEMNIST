@@ -4,12 +4,14 @@ This repository contains the **Hu-CEMNIST dataset**, a large-scale collection of
 
 ## Repository Structure
 
-'''text
-.
 ├── Analysis/      # Scripts for generating and evaluating CFEs
+
 ├── Data/          # Final dataset and annotations
+
 ├── Server/        # Web-based data collection interface
+
 ├── README.md
+
 └── mnist-data.tar.gz
 
 ## 🔬 Analysis

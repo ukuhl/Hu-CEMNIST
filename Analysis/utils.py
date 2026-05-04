@@ -68,7 +68,7 @@ def load_original_images(path_in="../Server/site/static/target_images_SSIM/"):
     return data
 
 
-def load_human_generated_counterfactuals(path_in: str = "../Hu-CEMNIST_valid_images/"):
+def load_human_generated_counterfactuals(path_in: str = "../Data/Hu-CEMNIST_valid_images/"):
     user_info = pd.read_csv(os.path.join(path_in, "user_info_complete.csv"))
     user_info = user_info[["userID", "trial1_baseDigit", "trial1_targetDigit",
                            "trial2_baseDigit", "trial2_targetDigit",
@@ -107,8 +107,8 @@ def load_human_generated_counterfactuals(path_in: str = "../Hu-CEMNIST_valid_ima
 
 
 def load_kaggle_mnist():
-    imagefile_train = '../train-images.idx3-ubyte'
-    imagefile_test = '../t10k-images.idx3-ubyte'
+    imagefile_train = '../Data/train-images.idx3-ubyte'
+    imagefile_test = '../Data/t10k-images.idx3-ubyte'
     imagearray_train = idx2numpy.convert_from_file(imagefile_train)
     imagearray_test = idx2numpy.convert_from_file(imagefile_test)
 

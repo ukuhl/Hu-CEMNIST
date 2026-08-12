@@ -44,7 +44,10 @@ This repository contains the **Hu-CEMNIST dataset**, a large-scale collection of
   → Questionnaire responses  
 
 - 'user_info_complete.csv'  
-  → Study metadata and trial-level information  
+  → Study metadata and trial-level information
+
+- 'target_images_SSIM.zip'
+  → Target exemplar images selected from MNIST based on highest SSIM to the thresholded mean image of the respective digit class
 
 ---
 

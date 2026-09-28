@@ -146,4 +146,17 @@ Creative Commons Attribution 4.0 International
 
 ## 📚 Citation
 
-If you use this dataset, please cite: TBD
+Kuhl, U., & Artelt, A. (2026). Hu-CEMNIST: A Benchmark Dataset of Human-Generated Counterfactual Explanations for MNIST. In H. Baier, T. Huber, S. Sreedharan, K. Weitz, & S. L. Vasileiou (Eds.), Proceedings of the IJCAI–ECAI 2026 Workshop on Explainable Artificial Intelligence (XAI) (pp. 179–202). Bremen.
+
+```
+@inproceedings{kuhl_2026_Hu-CEMNIST,
+  author       = {Kuhl, Ulrike and Artelt, André},
+  booktitle    = {Proceedings of the IJCAI–ECAI 2026  Workshop on Explainable Artificial Intelligence (XAI)},
+  editor       = {Baier, Hendrik and Huber, Tobias and Sreedharan, Sarath and Weitz, Katharina and Vasileiou, Stylianos Loukas},
+  location     = {Bremen},
+  pages        = {179--202},
+  title        = {Hu-CEMNIST: A Benchmark Dataset of Human-Generated Counterfactual Explanations for MNIST},
+  url          = {https://nbn-resolving.org/urn:nbn:de:0070-pub-30205431, https://pub.uni-bielefeld.de/record/3020543},
+  year         = {2026},
+}
+```

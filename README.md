@@ -146,6 +146,8 @@ Creative Commons Attribution 4.0 International
 
 ## 📚 Citation
 
+If you use this dataset, please cite:
+
 Kuhl, U., & Artelt, A. (2026). Hu-CEMNIST: A Benchmark Dataset of Human-Generated Counterfactual Explanations for MNIST. In H. Baier, T. Huber, S. Sreedharan, K. Weitz, & S. L. Vasileiou (Eds.), Proceedings of the IJCAI–ECAI 2026 Workshop on Explainable Artificial Intelligence (XAI) (pp. 179–202). Bremen.
 
 ```

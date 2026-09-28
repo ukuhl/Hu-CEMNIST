@@ -4,11 +4,13 @@ This repository contains the **Hu-CEMNIST dataset**, a large-scale collection of
 
 ## Repository Structure
 
-├── Analysis/      # Scripts for generating and evaluating CFEs
+├── Analysis/          # Scripts for generating and evaluating CFEs
 
-├── Data/          # Final dataset and annotations
+├── Data/              # Final dataset and annotations
 
-├── Server/        # Web-based data collection interface
+├── Server/            # Web-based data collection interface
+
+├── Kuhl_xai2026.pdf   # Paper
 
 ├── README.md
 
